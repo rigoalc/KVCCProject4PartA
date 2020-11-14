@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="eng-us">
+<head>
+<title>Project 4 Part A</title>
+<!--
+Part A (50 Points) - Write a simple programming solution that will get a value from the user and will return a result that is based on user input.
+
+Get some integer (whole number) value from the user with a text box.
+
+Ask them for the amount of US Dollars they want to exchange into British Pounds Sterling.
+
+For simplicity, use a conversion formula of 1 US Dollar is 1.30  British Pounds Sterling.
+
+So ... gbp= dollars * 1.30;
+
+Write an "if" statement that will give one of two different output.
+
+If it is greater than or equal to 1,000 dollars, tell the user that "____ dollars is a lot of money to exchange. $____ US will be £ ____ ."
+
+If it is less than 1000 dollars tell the user: " $____ US is £ ____. Have a nice day."
+-->
+
+<script>
+
+function convertDollarsToPounds(){
+
+    var dollars = parseInt(document.getElementById("dollarinput").value);
+    var pounds = (dollars * 1.30).toFixed(2);
+    var msg = "$" + dollars;
+
+    if (dollars >= 1000){
+
+        msg += " Dollars is a lot of money to exchange. $" + dollars + " US Dollars will be £" + pounds + " British Pounds Sterling."
+
+    } else {
+
+        msg += " US Dollars is £" + pounds + " British Pounds Sterling. Have a nice day."
+    }
+
+    document.getElementById("outputPara").innerHTML = msg;
+}
+
+</script>
+
+</head>
+
+<body>
+    <div>
+        Dollars: <input type="number" id="dollarinput"><br>
+        <button onclick="convertDollarsToPounds()">Convert</button>
+    </div>
+
+    
+    <p id="outputPara"></p>
+    </body>
+    </html>
+    
